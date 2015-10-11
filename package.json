@@ -1,0 +1,32 @@
+{
+  "name": "angular-gulp-browserify-tut",
+  "version": "1.0.0",
+  "description": "Tutorial from: http://mindthecode.com/lets-build-an-angularjs-app-with-browserify-and-gulp/",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "mcneela86",
+  "license": "ISC",
+  "devDependencies": {
+    "browserify": "^11.2.0",
+    "connect-livereload": "^0.5.3",
+    "express": "^4.13.3",
+    "gulp": "^3.9.0",
+    "gulp-autoprefixer": "^3.0.2",
+    "gulp-browserify": "^0.5.1",
+    "gulp-clean": "^0.3.1",
+    "gulp-concat": "^2.6.0",
+    "gulp-embedlr": "^0.5.2",
+    "gulp-jshint": "^1.11.2",
+    "gulp-livereload": "^3.8.1",
+    "gulp-rimraf": "^0.2.0",
+    "gulp-sass": "^2.0.4",
+    "gulp-util": "^3.0.6",
+    "tiny-lr": "^0.2.0"
+  },
+  "dependencies": {
+    "angular": "^1.4.7",
+    "angular-ui-router": "^0.2.15"
+  }
+}
