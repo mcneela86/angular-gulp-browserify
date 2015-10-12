@@ -23,6 +23,8 @@
     "gulp-rimraf": "^0.2.0",
     "gulp-sass": "^2.0.4",
     "gulp-util": "^3.0.6",
+    "node-bourbon": "^4.2.3",
+    "node-neat": "^1.7.2",
     "tiny-lr": "^0.2.0"
   },
   "dependencies": {

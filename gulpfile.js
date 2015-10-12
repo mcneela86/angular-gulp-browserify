@@ -6,6 +6,9 @@ var gulp = require('gulp'),
     concat = require('gulp-concat'),
     rimraf = require('gulp-rimraf'),
     sass = require('gulp-sass'),
+    clean = require('gulp-clean'),
+    bourbon = require('node-bourbon').includePaths,
+    neat = require('node-neat').includePaths,
     autoprefixer = require('gulp-autoprefixer');
 
 // Modules for webserver and livereload
@@ -27,16 +30,20 @@ server.all('/*', function(req, res) {
 });
 
 // Dev task
-gulp.task('dev', ['clean', 'views', 'styles', 'lint', 'browserify'], function() { });
+gulp.task('dev', ['views', 'styles', 'lint', 'browserify'], function() { });
 
 // Clean task
+// gulp.task('clean', function() {
+// 	gulp.src('./dist/**', { read: false }) // much faster
+//   .pipe(rimraf({force: true}));
+// });
 gulp.task('clean', function() {
-	gulp.src('./dist/**', { read: false }) // much faster
-  .pipe(rimraf({force: true}));
+ return gulp.src('./dist/**')
+ .pipe(clean());
 });
 
 // JSHint task
-gulp.task('lint', function() {
+gulp.task('lint', ['clean'], function() {
   gulp.src('app/scripts/*.js')
   .pipe(jshint())
   .pipe(jshint.reporter('default'));
@@ -46,7 +53,13 @@ gulp.task('lint', function() {
 gulp.task('styles', function() {
   gulp.src('app/styles/*.scss')
   // The onerror handler prevents Gulp from crashing when you make a mistake in your SASS
-  .pipe(sass({onError: function(e) { console.log(e); } }))
+  .pipe(sass({
+    onError: function(e) { 
+      console.log(e); 
+    },
+    includePaths: bourbon,
+    includePaths: require('node-neat').includePaths
+  }))
   // Optionally add autoprefixer
   .pipe(autoprefixer('last 2 versions', '> 1%', 'ie 8'))
   // These last two should look familiar now :)
@@ -54,7 +67,7 @@ gulp.task('styles', function() {
 });
 
 // Browserify task
-gulp.task('browserify', function() {
+gulp.task('browserify', ['clean'], function() {
   // Single point of entry (make sure not to src ALL your files, browserify will figure it out)
   gulp.src(['app/scripts/main.js'])
   .pipe(browserify({
@@ -68,7 +81,7 @@ gulp.task('browserify', function() {
 });
 
 // Views task
-gulp.task('views', function() {
+gulp.task('views', ['clean'], function() {
   // Get our index.html
   gulp.src('app/index.html')
   // And put it in the dist folder
