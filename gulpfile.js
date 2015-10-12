@@ -31,7 +31,7 @@ gulp.task('dev', ['clean', 'views', 'styles', 'lint', 'browserify'], function() 
 
 // Clean task
 gulp.task('clean', function() {
-	gulp.src('./dist/views', { read: false }) // much faster
+	gulp.src('./dist/**', { read: false }) // much faster
   .pipe(rimraf({force: true}));
 });
 

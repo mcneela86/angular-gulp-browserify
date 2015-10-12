@@ -4,7 +4,7 @@
 
 	// Require third party libs
 	var angular = require('angular');
-	var router = require('angular-ui-router');
+	require('angular-ui-router');
 
 	// Require my modules
 	var onConfig = require('./config.js');
