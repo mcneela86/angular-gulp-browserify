@@ -1,6 +1,10 @@
 <!-- partial-home.html -->
-
-<div class="jumbotron text-center">
+<div class="text-center">
     <h1>The Home Page</h1>
     {{home.testVar}}
+
+    <ul class="list">
+    	<li class="company" ng-repeat="item in home.list">{{item}}</li>
+    </ul>
+
 </div>

@@ -5,6 +5,7 @@
 	// Require third party libs
 	var angular = require('angular');
 	require('angular-ui-router');
+	require('angular-animate');
 
 	// Require my modules
 	var onConfig = require('./config.js');
@@ -13,7 +14,8 @@
 
 	// Dependency injection
 	var requires = [
-		'ui.router'
+		'ui.router',
+		'ngAnimate'
 	];
 
 	// Initialise app

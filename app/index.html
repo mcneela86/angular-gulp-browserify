@@ -5,25 +5,18 @@
 	<link rel="stylesheet" type="text/css" href="/css/main.css">
 </head>
 <body >
-	<!-- NAVIGATION -->
-	<nav class="navbar navbar-inverse" role="navigation">
-	    <div class="navbar-header">
-	        <a class="navbar-brand" ui-sref="#">AngularUI Router</a>
-	    </div>
-	    <ul class="nav navbar-nav">
-	        <li><a ui-sref="home">Home</a></li>
-	        <li><a ui-sref="about">About</a></li>
-	    </ul>
-	</nav>
-
+	
 	<!-- MAIN CONTENT -->
 	<div class="container">
-
+		
+		<!-- NAVIGATION TEMPLATE/PARTIAL INCLUDE -->
+		<div ng-include src="'/views/partials/partial-nav.html'"></div>
+		
 	    <!-- THIS IS WHERE WE WILL INJECT OUR CONTENT ============================== -->
-	    <div ui-view></div>
+	    <div id="mainView" ui-view></div>
 
 	</div>
-
+	
 	<script src="/js/bundle.js"></script>
 </body>
 </html>

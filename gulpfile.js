@@ -38,7 +38,7 @@ gulp.task('dev', ['views', 'styles', 'lint', 'browserify'], function() { });
 //   .pipe(rimraf({force: true}));
 // });
 gulp.task('clean', function() {
- return gulp.src('./dist/**')
+ return gulp.src('./dist/**', { read: false })
  .pipe(clean());
 });
 

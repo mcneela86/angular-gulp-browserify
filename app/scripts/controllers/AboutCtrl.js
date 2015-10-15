@@ -1,7 +1,7 @@
 'use strict';
 
 var AboutCtrl = function($scope) {
-  this.testVar = '\'bout ye';
+  this.testVar = 'About page';
   $scope.anotherTestVar = 'And again!';
 };
 
