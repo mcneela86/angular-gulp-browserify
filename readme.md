@@ -1,0 +1,1 @@
+This is a simple started project using Angular, Gulp, Browserify, UI Router, Bourbon and Neat.
