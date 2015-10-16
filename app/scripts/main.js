@@ -3,6 +3,7 @@
 	'use strict';
 
 	// Require third party libs
+	require('jquery');
 	var angular = require('angular');
 	require('angular-ui-router');
 	require('angular-animate');

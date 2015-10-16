@@ -1,6 +1,10 @@
+// Libs
 @import "bourbon"; //added via gulp
 @import "neat"; //added via gulp
+
+// Custom - components
 @import 'vars';
 @import 'components/typography';
+
+// Custom - misc
 @import 'components/custom';
-@import 'components/tests'; //include in development only
